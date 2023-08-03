@@ -31,7 +31,7 @@ body.active{
     --bg-color:#0f0c27;
 }
 section{
-    padding: 32px 10%;
+    padding: 24px 10%;
 }
 
 *::selection{
@@ -222,22 +222,35 @@ section{
 /* =================Skills=============== */
 
 .skills-container{
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
+ width: 100%;
+  display: flex;
   align-items: center;
   gap: 2rem;
   margin-top: 4rem;
 }
-
+.bars{
+    width: 50%;
+}
+.skills-img-container{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.skills-img{
+    width:100%;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .skills-img img{
     width: 100%;
     height: 350px;
-    padding-left: 4rem;
-    object-fit: cover;
-    object-position: center;
     border: 1px solid;
-    border-radius: 0.5rem;
+   border-radius: 8px;
 }
+
 .bars-box{
     position: relative;
     display: flex;
@@ -290,18 +303,26 @@ section{
 /* =============Project Section========= */
 
 .project-content{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,auto));
+    display: flex;
+    flex-direction: row;
     gap: 1rem;
     margin-top: 2rem;
     justify-content: space-around;
-   
+    padding: 8px;
+
+}
+.project-item{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 16px;
+   width:33%;
 }
 .project-img{
     max-width: 400px;
     overflow: hidden;
-  
-       
+    border-radius: 8px;
 }
 
 .project-img img{
@@ -404,7 +425,7 @@ form textarea{
         padding: 18px 4%;
     }
     section{
-        padding: 75px 4%;
+        padding: 24px 4%;
     }
 }
 @media (max-width:768px){
@@ -474,7 +495,13 @@ form textarea{
     }
 
     .skills-container{
-        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+    .bars{
+        width: 90%;
+    }
+    .skills-img-container{
+        width: 90%;
     }
     .skills-img img{
         padding-left: 0;
@@ -486,7 +513,13 @@ form textarea{
     }
 
     .project-content{
-       justify-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .project-item{
+       width:90%;
     }
 
     .contact-form form{
